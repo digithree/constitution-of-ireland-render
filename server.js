@@ -76,11 +76,11 @@ var App = function() {
                 */
 
                 var stringed = JSON.stringify(items);
-                console.log('items: '+stringed);
+                console.log('items: '+items);
 
                 res.render('beard', {
                     message: "Hello World!",
-                    items: stringed
+                    items: items
                 });
 
                 /*
