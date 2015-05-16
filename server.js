@@ -42,8 +42,8 @@ var App = function() {
     };
 
     // mustache setup
-    self.app.engine('mustache', mustacheExpress())
-    self.app.set('view engine', 'mustache');
+    self.app.engine('html', mustacheExpress())
+    self.app.set('view engine', 'html');
     self.app.set('views', __dirname + '/public/render');
     //self.app.set('views',express.static(path.join(__dirname + '.../public/render')));
 
