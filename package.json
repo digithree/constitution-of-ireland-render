@@ -1,22 +1,26 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "constitution-of-ireland-render",
+  "version": "0.1.0",
+  "description": "Render Git reenactment of Constitution of Ireland",
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "openshift",
+    "Ireland",
+    "politics",
+    "constitution",
+    "law"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Simon Kenny",
+    "email": "simon@surfacetensionmusic.com",
+    "url": "http://imsimonkenny.com/"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://imsimonkenny.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/digithree/origin-server"
   },
 
   "engines": {
@@ -25,7 +29,7 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "express": ">= 4.8.0"
   },
   "devDependencies": {},
   "bundleDependencies": [],

@@ -1,3 +1,8 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+### Constitution of Ireland
+## Render Git reenactment
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+An examination by way of reenactment of the changes made to the Constitution of Ireland as it was amended over time via Referendum.
+
+# Disclaimer
+
+The documents contained in the Git repository should not be considered usable legal documents.
