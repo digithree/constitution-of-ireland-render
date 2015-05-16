@@ -69,10 +69,10 @@ var App = function() {
             } else {
                 //res.end(JSON.stringify(names));
                 console.log("Got all items from repo collection");
-                res.render('beard', JSON.stringify({
+                res.render('beard', JSON.stringify([{
                         direction: "",
                         sha: "ERROR"
-                    }));
+                    }]));
                 //JSON.stringify(items)
             }
         });
