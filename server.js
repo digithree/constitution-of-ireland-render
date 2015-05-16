@@ -74,6 +74,7 @@ var App = function() {
                     items: JSON.stringify(items)
                 });
                 */
+                /*
                 res.render('beard', {
                     message: "Hello World!",
                     items: [
@@ -96,6 +97,78 @@ var App = function() {
                             }
                         }
                     ]
+                });
+                */
+                res.render('beard', {
+                    message: "Hello World!",
+                    items: [
+  {
+    "sha": "992f6d9b5abbbdcd31d89c51279b0562e669ba1e",
+    "commit": {
+      "author": {
+        "name": "Simon Kenny",
+        "email": "digithree@gmail.com",
+        "date": "2015-05-16T21:21:11Z"
+      },
+      "committer": {
+        "name": "Simon Kenny",
+        "email": "digithree@gmail.com",
+        "date": "2015-05-16T21:21:11Z"
+      },
+      "message": "Initial commit",
+      "tree": {
+        "sha": "d7f158f2a5a6d4f0d6a35f96793b62115c7d6896",
+        "url": "https://api.github.com/repos/digithree/fake/git/trees/d7f158f2a5a6d4f0d6a35f96793b62115c7d6896"
+      },
+      "url": "https://api.github.com/repos/digithree/fake/git/commits/992f6d9b5abbbdcd31d89c51279b0562e669ba1e",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/digithree/fake/commits/992f6d9b5abbbdcd31d89c51279b0562e669ba1e",
+    "html_url": "https://github.com/digithree/fake/commit/992f6d9b5abbbdcd31d89c51279b0562e669ba1e",
+    "comments_url": "https://api.github.com/repos/digithree/fake/commits/992f6d9b5abbbdcd31d89c51279b0562e669ba1e/comments",
+    "author": {
+      "login": "digithree",
+      "id": 2079498,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2079498?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digithree",
+      "html_url": "https://github.com/digithree",
+      "followers_url": "https://api.github.com/users/digithree/followers",
+      "following_url": "https://api.github.com/users/digithree/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digithree/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digithree/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digithree/subscriptions",
+      "organizations_url": "https://api.github.com/users/digithree/orgs",
+      "repos_url": "https://api.github.com/users/digithree/repos",
+      "events_url": "https://api.github.com/users/digithree/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digithree/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "digithree",
+      "id": 2079498,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2079498?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/digithree",
+      "html_url": "https://github.com/digithree",
+      "followers_url": "https://api.github.com/users/digithree/followers",
+      "following_url": "https://api.github.com/users/digithree/following{/other_user}",
+      "gists_url": "https://api.github.com/users/digithree/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/digithree/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/digithree/subscriptions",
+      "organizations_url": "https://api.github.com/users/digithree/orgs",
+      "repos_url": "https://api.github.com/users/digithree/repos",
+      "events_url": "https://api.github.com/users/digithree/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/digithree/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+
+    ]
+  }
+]
                 });
                 //JSON.stringify(items)
             }
