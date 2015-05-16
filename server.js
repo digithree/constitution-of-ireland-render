@@ -60,12 +60,12 @@ var App = function() {
             if (err) {
                 console.error(err);
                 //res.end(JSON.stringify({error : "Some error"}));
-                res.render('beard',
-                    JSON.stringify({
+                res.render('beard', {
+                    items: [ {
                         direction: "",
                         sha: "ERROR"
-                    })
-                );
+                    }]
+                });
             } else {
                 //res.end(JSON.stringify(names));
                 console.log("Got all items from repo collection");
@@ -76,11 +76,11 @@ var App = function() {
                 */
 
                 var stringed = JSON.stringify(items);
-                //console.log('items: '+items);
+                console.log('items: '+stringed);
 
                 res.render('beard', {
                     message: "Hello World!",
-                    items: JSON.stringify(items)
+                    items: stringed
                 });
 
                 /*
