@@ -75,7 +75,7 @@ var App = function() {
                 });
                 */
 
-                var intCount = docs.length;
+                var intCount = items.length;
                 if (intCount > 0) {
                     var strJson = '{ "items": [';
                     for (var i = 0; i < intCount;) {
