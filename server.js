@@ -69,8 +69,33 @@ var App = function() {
             } else {
                 //res.end(JSON.stringify(names));
                 console.log("Got all items from repo collection");
+                /*
                 res.render('beard', {
                     items: JSON.stringify(items)
+                });
+                */
+                res.render('beard', {
+                    message: "Hello World!",
+                    items: [
+                        {
+                            sha: "Part One",
+                            commit: {
+                                committer: {
+                                    name: "Simon"
+                                },
+                                message: "Some message"
+                            }
+                        },
+                        {
+                            sha: "Part Two",
+                            commit: {
+                                committer: {
+                                    name: "Kenny"
+                                },
+                                message: "Different message"
+                            }
+                        }
+                    ]
                 });
                 //JSON.stringify(items)
             }
