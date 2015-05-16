@@ -284,7 +284,7 @@ var App = function() {
                 }, function(rezzz) {
                     rezzz.on('data', function(data) {
                         console.log(data+'');
-                        repo.insert(JSON.stringify(data), {safe : false}, function(err, inserted_doc) {
+                        repo.insert(JSON.parse(data), {safe : false}, function(err, inserted_doc) {
                             if( err && err.name == "MongoError" && err.code == 11000 ) {
                                 console.log("This entry already exists.");
                                 res.end("This entry already exists.");
