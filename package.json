@@ -31,7 +31,7 @@
   "dependencies": {
     "express": ">= 4.8.0",
     "mongodb": "> 2.0.0",
-    "mustache": ">= 2.0.0"
+    "mustache-express": ">= 1.2.1"
   },
   "devDependencies": {},
   "bundleDependencies": [],
