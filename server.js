@@ -2,6 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var mongodb = require('mongodb');
 
 
 var App = function() {
@@ -13,6 +14,11 @@ var App = function() {
 
 
     // Setup
+    self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST, parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT));
+    self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME, self.dbServer, {auto_reconnect: true});
+    self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
+    self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
+
     self.ipaddr  = process.env.OPENSHIFT_NODEJS_IP;
     self.port    = parseInt(process.env.OPENSHIFT_NODEJS_PORT) || 8080;
 
@@ -33,8 +39,19 @@ var App = function() {
 
     self.app.use(express.static(__dirname + '/public'));
 
-    // OLD ROUTING
+    // Connect routing
     self.app.get('/test', self.routes['test']);
+
+    // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
+    self.connectDb = function(callback){
+        self.db.open(function(err, db){
+            if(err){ throw err };
+            self.db.authenticate(self.dbUser, self.dbPass, {authdb: "admin"},  function(err, res){
+                if(err){ throw err };
+                callback();
+            });
+        });
+    };
 
     //starting the nodejs server with express
     self.startServer = function(){
