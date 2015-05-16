@@ -58,8 +58,8 @@ var App = function() {
     self.app.get('/renderer', function(req, res) {
         var url = "https://api.github.com/repos/digithree/constitution-of-ireland-render/commits";
         request(url, function(err, resp, body) {
-            var jsonObj = JSON.parse(body);
-            res.render('beard', jsonObj);
+            //var jsonObj = JSON.parse(body);
+            res.render('beard', body);
         });
     });
 
