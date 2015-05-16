@@ -6,6 +6,7 @@ var mongodb = require('mongodb');
 var path = require ('path');
 var exphbs  = require('express-handlebars');
 var request = require('request');
+var moment = require('moment');
 
 
 var App = function() {
@@ -80,7 +81,10 @@ var App = function() {
                     var strJson = '{ "items": [';
                     for (var i = 0; i < intCount;) {
                         strJson += '{"title":"'
-                            + items[i].commit.committer.name
+                            + items[i].commit.message
+                            + '",';
+                        strJson += '"commit-link":"'
+                            + items[i].commit.url
                             + '",';
                         strJson += '"direction":"'
                             + (i%2==1?'class=timeline-inverted':'')
@@ -89,10 +93,12 @@ var App = function() {
                             + (i%2==1?'court':'europe')
                             + '",';
                         strJson += '"subheading":"'
-                            + items[i].commit.committer.date
+                            + moment(items[i].commit.committer.date)
+                                .format("dddd, MMMM Do YYYY, h:mm:ss a")
                             + '",';
                         strJson += '"content":"'
-                            + items[i].commit.message
+                            + items[i].commit.committer.name
+                            + " committed this"
                             + '"}';
                         i = i + 1;
                         if (i < intCount) {
