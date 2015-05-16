@@ -121,7 +121,7 @@ var App = function() {
 
     // Generate db from GitHub API
     // TODO : make as CRON job every day?
-    self.routes['create-db'] = function(req, res){
+    self.app.get('create-db', function(req, res){
         self.db.collection('repo', function(err, repo) {
             if (err) {
                 console.error(err);
@@ -154,7 +154,7 @@ var App = function() {
                     });
                 });
         });
-    };
+    });
 
     // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
     self.connectDb = function(callback){
