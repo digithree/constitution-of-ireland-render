@@ -84,7 +84,7 @@ var App = function() {
                             + items[i].commit.message
                             + '",';
                         strJson += '"commit-link":"'
-                            + items[i].commit.url
+                            + items[i].html_url
                             + '",';
                         strJson += '"direction":"'
                             + (i%2==1?'class=timeline-inverted':'')
