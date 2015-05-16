@@ -31,7 +31,7 @@ var App = function() {
     // Scope
     var self = this;
     // Webapp setup
-    self.app  = express();
+    self.app = express();
 
 
     // Setup
@@ -60,16 +60,23 @@ var App = function() {
         res.sendfile('./public/render/index-pt-2.html', {root: __dirname });
     };
 
-    self.app.use(express.static(__dirname + '/public'));
+    //self.app.use(express.static(__dirname + '/public'));
 
     // Connect routing
-    self.app.get('/test', self.routes['test']);
+    //self.app.get('/test', self.routes['test']);
     //self.app.get('/renderer', self.routes['renderer']);
 
-    // register stuff
+    // handlebars / mustache
+    self.app.use(express.methodOverride());
+    self.app.use(express.bodyDecoder());
+    self.app.use(self.app.router);
     self.app.register(".html", tmpl);
+    self.app.use(express.errorHandler({
+        dumpExceptions:true, 
+        showStack:true
+    }));
 
-    app.get("/renderer", function(req, res) {
+    self.app.get("/renderer", function(req, res) {
         res.render("./public/render/bread.html", {
             locals: {
                 message: "Hello World!",
