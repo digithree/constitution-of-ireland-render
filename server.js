@@ -74,10 +74,11 @@ var App = function() {
                     subheading: "The other year",
                     content: "Some more stuff about stuff"
                 }
-            ],
-            timeline: "{{#items}}<li {{.title}}><div class=\"timeline-image\"><img class=\"img-circle img-responsive\" src=\"img/categories/{{.category}}.png\" alt=\"\"></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4>{{.title}}</h4><h4 class=\"subheading\">{{.subheading}}</h4></div><div class=\"timeline-body\"><p class=\"text-muted\">{{.content}}</p></div></div></li>{{/items}}"
+            ]
         });
     });
+
+    //timeline: "{{#items}}<li {{.title}}><div class=\"timeline-image\"><img class=\"img-circle img-responsive\" src=\"img/categories/{{.category}}.png\" alt=\"\"></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4>{{.title}}</h4><h4 class=\"subheading\">{{.subheading}}</h4></div><div class=\"timeline-body\"><p class=\"text-muted\">{{.content}}</p></div></div></li>{{/items}}"
 
     /*
     self.app.get("/renderer", function(req, res) {
