@@ -78,10 +78,10 @@ var App = function() {
                 var stringed = JSON.stringify(items);
                 console.log('items: '+stringed);
 
-                res.render('beard', {
+                res.render('beard', JSON.parse({
                     message: "Hello World!",
                     items: stringed
-                });
+                }));
 
                 /*
                 res.render('beard', {
