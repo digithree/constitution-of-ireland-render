@@ -121,7 +121,7 @@ var App = function() {
 
     // Generate db from GitHub API
     // TODO : make as CRON job every day?
-    self.app.get('create-db', function(req, res){
+    self.app.get('/create-db', function(req, res){
         self.db.collection('repo', function(err, repo) {
             if (err) {
                 console.error(err);
