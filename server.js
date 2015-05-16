@@ -68,6 +68,7 @@ var App = function() {
                 );
             } else {
                 //res.end(JSON.stringify(names));
+                console.log("Got all items from repo collection");
                 res.render('beard', items);
             }
         });
