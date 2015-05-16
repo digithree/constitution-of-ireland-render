@@ -3,6 +3,7 @@
 var express = require('express');
 var fs      = require('fs');
 var mongodb = require('mongodb');
+var path = require ('path');
 var mustacheExpress = require('mustache-express');
 
 
@@ -43,9 +44,8 @@ var App = function() {
     // mustache setup
     self.app.engine('mustache', mustacheExpress())
     self.app.set('view engine', 'mustache');
-    self.app.set('views', __dirname + './public/render');
-
-    self.app.use(express.static(__dirname + '/public'));
+    self.app.use(express.static(path.join(__dirname + '.../public')));
+    self.app.set('views',express.static(path.join(__dirname + '.../public/render')));
 
     // Connect routing
     self.app.get('/test', self.routes['test']);
