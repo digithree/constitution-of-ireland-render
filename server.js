@@ -33,7 +33,7 @@ var App = function() {
         res.send('test ok');
     };
 
-    self.routes['render'] = function(req, res){ 
+    self.routes['renderer'] = function(req, res){ 
         res.sendfile('./public/render/index-pt-1.html', {root: __dirname });
         res.sendfile('./public/render/index-middle.html', {root: __dirname });
         res.sendfile('./public/render/index-pt-2.html', {root: __dirname });
@@ -43,7 +43,7 @@ var App = function() {
 
     // Connect routing
     self.app.get('/test', self.routes['test']);
-    self.app.get('/render', self.routes['render']);
+    self.app.get('/renderer', self.routes['renderer']);
 
     // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
     self.connectDb = function(callback){
