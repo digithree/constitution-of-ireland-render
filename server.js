@@ -76,12 +76,12 @@ var App = function() {
                 });
                 */
 
-                var allCats = {[
+                var allCats = [
                     'church-state',
                     'court',
                     'europe',
                     'nation'
-                ]};
+                ];
 
                 var intCount = items.length;
                 if (intCount > 0) {
