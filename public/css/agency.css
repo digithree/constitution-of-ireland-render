@@ -180,14 +180,14 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #0042ff;
+    color: #FFFFFF;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #0042ff;
+    color: #FFFFFFF;
 }
 
 .navbar-default .navbar-collapse {
