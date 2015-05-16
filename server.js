@@ -136,6 +136,20 @@ var App = function() {
 
     //"<ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>"
 
+    self.app.get('/drop-db', function(req, res){
+        self.db.collection('repo', function(err, repo) {
+            if (err) {
+                console.error(err);
+                res.end("Error");
+                return;
+            } else {
+                repo.drop();
+                console.log("DB 'repo' dropped");
+                res.end("Dropped db");
+            }
+        })
+    });
+
     // Generate db from GitHub API
     // TODO : make as CRON job every day?
     self.app.get('/create-db', function(req, res){
@@ -149,7 +163,7 @@ var App = function() {
             require( 'https' )
                 .get({
                     hostname: 'api.github.com',
-                    path: '/repos/digithree/constitution-of-ireland-render/commits',
+                    path: '/repos/digithree/fake/commits',
                     headers: {
                         'User-Agent' : 'digithree'
                     }
@@ -166,7 +180,7 @@ var App = function() {
                                 res.end("Some error");
                                 return;
                             }
-                            res.end("<h1>Created db from JSON array!</h1>");
+                            res.end("Created db from JSON array!");
                         });
                     });
                 });
