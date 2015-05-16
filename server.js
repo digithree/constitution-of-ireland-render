@@ -76,7 +76,7 @@ var App = function() {
                 items: [
                     {
                         title: "Part One",
-                        direction: "", //class="timeline-inverted"
+                        direction: "",
                         category: "court.png",
                         subheading: "The year",
                         content: "A few words about stuff"
