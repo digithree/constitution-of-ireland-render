@@ -54,7 +54,7 @@ var App = function() {
     //curl -i https://api.github.com/repos/digithree/constitution-of-ireland-render/commits
 
     self.app.get('/renderer', function(req, res) {
-    res.render('beard', , {
+    res.render('beard', {
             message: "Hello World!",
             items: [
                 {
