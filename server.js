@@ -76,8 +76,9 @@ var App = function() {
         });
     });
 
+    /*
     self.app.get("/renderer", function(req, res) {
-        res.render("./public/render/bread.html", {
+        res.render("./public/render/beard.html", {
             locals: {
                 message: "Hello World!",
                 items: [
@@ -102,6 +103,7 @@ var App = function() {
             }
         });
     });
+    */
 
     //"<ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>"
 
