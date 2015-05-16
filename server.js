@@ -80,7 +80,7 @@ var App = function() {
                 if (intCount > 0) {
                     var strJson = '{ "items": [';
                     for (var i = 0; i < intCount;) {
-                        strJson += '{"title":"'
+                        strJson += '{"message":"'
                             + items[i].commit.message
                             + '",';
                         strJson += '"commit-link":"'
@@ -92,11 +92,11 @@ var App = function() {
                         strJson += '"category":"'
                             + (i%2==1?'court':'europe')
                             + '",';
-                        strJson += '"subheading":"'
+                        strJson += '"datetime":"'
                             + moment(items[i].commit.committer.date)
                                 .format("dddd, MMMM Do YYYY, h:mm:ss a")
                             + '",';
-                        strJson += '"content":"'
+                        strJson += '"committer":"'
                             + items[i].commit.committer.name
                             + " committed this"
                             + '"}';
