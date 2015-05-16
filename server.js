@@ -99,6 +99,7 @@ var App = function() {
                             strJson += ',';
                         }
                     }
+                    strJson += ']}';
                     //callback("", JSON.parse(strJson));
                     console.log('items: '+strJson);
 
