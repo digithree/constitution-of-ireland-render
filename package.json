@@ -31,7 +31,8 @@
   "dependencies": {
     "express": ">= 4.8.0",
     "mongodb": "> 2.0.0",
-    "express-handlebars": ">= 2.0.1"
+    "express-handlebars": ">= 2.0.1",
+    "request": ">= 2.55.0"
   },
   "devDependencies": {},
   "bundleDependencies": [],

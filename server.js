@@ -5,6 +5,7 @@ var fs      = require('fs');
 var mongodb = require('mongodb');
 var path = require ('path');
 var exphbs  = require('express-handlebars');
+var request = require('request');
 
 
 var App = function() {
