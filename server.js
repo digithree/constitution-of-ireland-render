@@ -58,19 +58,9 @@ var App = function() {
     self.app.get('/renderer', function(req, res) {
         var url = "https://api.github.com/repos/digithree/constitution-of-ireland-render/commits";
 
-        require( 'https' )
-            .get({
-                hostname: 'api.github.com',
-                path: '/repos/digithree/constitution-of-ireland-render/commits',
-                headers: {
-                    'User-Agent' : 'digithree'
-                }
-            }, function(rezzz){
-                rezzz.on('data',function(data) {
-                    console.log(data+'');
-                    res.render('beard', data);
-                });
-            });
+
+        res.render('beard', function);
+        
 
         /*
         request(url, function(err, resp, body) {
@@ -135,6 +125,43 @@ var App = function() {
     */
 
     //"<ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>"
+
+    // Generate db from GitHub API
+    // TODO : make as CRON job every day?
+    self.routes['create-db'] = function(req, res){
+        self.db.collection('repo', function(err, repo) {
+            if (err) {
+                console.error(err);
+                res.end("Error");
+                return;
+            }
+
+            require( 'https' )
+                .get({
+                    hostname: 'api.github.com',
+                    path: '/repos/digithree/constitution-of-ireland-render/commits',
+                    headers: {
+                        'User-Agent' : 'digithree'
+                    }
+                }, function(rezzz) {
+                    rezzz.on('data', function(data) {
+                        console.log(data+'');
+                        repo.insert(userreq, {safe : false}, function(err, inserted_doc) {
+                            if( err && err.name == "MongoError" && err.code == 11000 ) {
+                                console.log("This entry already exists.");
+                                res.end("This entry already exists.");
+                                return;
+                            } else if( err ) {
+                                console.log("Some unknown error.");
+                                res.end("Some error");
+                                return;
+                            }
+                            res.end("<h1>Created db from JSON array!</h1>");
+                        });
+                    });
+                });
+        });
+    };
 
     // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
     self.connectDb = function(callback){
