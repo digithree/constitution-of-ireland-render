@@ -83,7 +83,7 @@ var App = function() {
                     },
                     {
                         title: "Part Two",
-                        direction: "class=\"timeline-inverted\""
+                        direction: "class=\"timeline-inverted\"",
                         category: "nation.png",
                         subheading: "The other year",
                         content: "Some more stuff about stuff"
