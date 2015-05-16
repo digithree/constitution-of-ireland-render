@@ -55,26 +55,34 @@ var App = function() {
     //curl -i https://api.github.com/repos/digithree/constitution-of-ireland-render/commits
 
     self.app.get('/renderer', function(req, res) {
-    res.render('beard', {
-            message: "Hello World!",
-            items: [
-                {
-                    title: "Part One",
-                    direction: "",
-                    category: "court",
-                    subheading: "The year",
-                    content: "A few words about stuff"
-                },
-                {
-                    title: "Part Two",
-                    direction: "class=timeline-inverted",
-                    category: "nation",
-                    subheading: "The other year",
-                    content: "Some more stuff about stuff"
-                }
-            ]
+        var url = "https://api.github.com/repos/digithree/constitution-of-ireland-render/commits";
+        request(url, function(err, resp, body) {
+            var jsonObj = JSON.parse(body);
+            res.render('beard', jsonObj);
         });
     });
+
+    /*
+    res.render('beard', {
+                message: "Hello World!",
+                items: [
+                    {
+                        title: "Part One",
+                        direction: "",
+                        category: "court",
+                        subheading: "The year",
+                        content: "A few words about stuff"
+                    },
+                    {
+                        title: "Part Two",
+                        direction: "class=timeline-inverted",
+                        category: "nation",
+                        subheading: "The other year",
+                        content: "Some more stuff about stuff"
+                    }
+                ]
+            });
+    */
 
     //timeline: "{{#items}}<li {{.title}}><div class=\"timeline-image\"><img class=\"img-circle img-responsive\" src=\"img/categories/{{.category}}.png\" alt=\"\"></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4>{{.title}}</h4><h4 class=\"subheading\">{{.subheading}}</h4></div><div class=\"timeline-body\"><p class=\"text-muted\">{{.content}}</p></div></div></li>{{/items}}"
 
