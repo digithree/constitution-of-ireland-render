@@ -74,6 +74,15 @@ var App = function() {
                     items: JSON.stringify(items)
                 });
                 */
+
+                var stringed = JSON.stringify(items);
+                console.log('items: '+stringed);
+
+                res.render('beard', {
+                    message: "Hello World!",
+                    items: stringed
+                });
+
                 /*
                 res.render('beard', {
                     message: "Hello World!",
@@ -99,6 +108,8 @@ var App = function() {
                     ]
                 });
                 */
+
+                /*
                 res.render('beard', {
                     message: "Hello World!",
                     items: [
@@ -173,6 +184,8 @@ var App = function() {
                 //JSON.stringify(items)
             }
         });
+        */
+
         /*
         request(url, function(err, resp, body) {
             //var jsonObj = JSON.parse(body);
