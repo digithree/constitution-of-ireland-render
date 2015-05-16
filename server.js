@@ -80,19 +80,19 @@ var App = function() {
                     var strJson = '{ "items": [';
                     for (var i = 0; i < intCount;) {
                         strJson += '{"title":"'
-                            + items[i].commit.message
+                            + items[i].commit.committer.name
                             + '",';
                         strJson += '"direction":"'
                             + (i%2==1?'class=timeline-inverted':'')
                             + '",';
                         strJson += '"category":"'
-                            + 'court'
+                            + (i%2==1?'court':'europe')
                             + '",';
                         strJson += '"subheading":"'
-                            + items[i].committer.name
+                            + items[i].commit.committer.date
                             + '",';
                         strJson += '"content":"'
-                            + items[i].sha
+                            + items[i].commit.message
                             + '"}';
                         i = i + 1;
                         if (i < intCount) {
