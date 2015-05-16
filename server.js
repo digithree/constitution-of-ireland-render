@@ -44,8 +44,11 @@ var App = function() {
     // mustache setup
     self.app.engine('mustache', mustacheExpress())
     self.app.set('view engine', 'mustache');
-    self.app.use(express.static(path.join(__dirname + '.../public')));
-    self.app.set('views',express.static(path.join(__dirname + '.../public/render')));
+    self.app.set('views', __dirname + '/public/render');
+    //self.app.set('views',express.static(path.join(__dirname + '.../public/render')));
+
+    self.app.use(express.static(__dirname + '/public'));
+    //self.app.use(express.static(path.join(__dirname + '.../public')));
 
     // Connect routing
     self.app.get('/test', self.routes['test']);
