@@ -34,7 +34,7 @@ var App = function() {
     };
 
     self.routes['root'] = function(req, res){ 
-        res.sendfile('./public/holder/index.html', {root: __dirname });
+        res.sendfile('./public/render/index.html', {root: __dirname });
     };
 
     self.app.use(express.static(__dirname + '/public'));
