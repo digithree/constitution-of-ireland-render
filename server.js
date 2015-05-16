@@ -3,7 +3,28 @@
 var express = require('express');
 var fs      = require('fs');
 var mongodb = require('mongodb');
+var mustache = require("mustache");
 
+var tmpl = {
+    compile: function (source, options) {
+        if (typeof source == 'string') {
+            return function(options) {
+                options.locals = options.locals || {};
+                options.partials = options.partials || {};
+                if (options.body) // for express.js > v1.0
+                    locals.body = options.body;
+                return mustache.to_html(
+                    source, options.locals, options.partials);
+            };
+        } else {
+            return source;
+        }
+    },
+    render: function (template, options) {
+        template = this.compile(template, options);
+        return template(options);
+    }
+};
 
 var App = function() {
 
@@ -43,7 +64,51 @@ var App = function() {
 
     // Connect routing
     self.app.get('/test', self.routes['test']);
-    self.app.get('/renderer', self.routes['renderer']);
+    //self.app.get('/renderer', self.routes['renderer']);
+
+    // register stuff
+    self.app.register(".html", tmpl);
+
+    app.get("/renderer", function(req, res) {
+        res.render("./public/render/bread.html", {
+            locals: {
+                message: "Hello World!",
+                items: [
+                    {
+                        title: "Part One",
+                        direction: "", //class="timeline-inverted"
+                        category: "court.png",
+                        subheading: "The year",
+                        content: "A few words about stuff"
+                    },
+                    {
+                        title: "Part Two",
+                        direction: 'class="timeline-inverted"'
+                        category: "nation.png",
+                        subheading: "The other year",
+                        content: "Some more stuff about stuff"
+                    }
+                ]
+            },
+            partials: {
+                timeline: '{{#items}}<li {{.title}}><div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/categories/{{.category}}.png" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>{{.title}}</h4>
+                                    <h4 class="subheading">{{.subheading}}</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">{{.content}}</p>
+                                </div>
+                            </div>
+                        </li>'
+            }
+        });
+    });
+
+    //"<ul>{{#items}}<li>{{.}}</li>{{/items}}</ul>"
 
     // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
     self.connectDb = function(callback){
