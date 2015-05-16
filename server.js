@@ -83,7 +83,7 @@ var App = function() {
                     },
                     {
                         title: "Part Two",
-                        direction: 'class="timeline-inverted"'
+                        direction: "class=\"timeline-inverted\""
                         category: "nation.png",
                         subheading: "The other year",
                         content: "Some more stuff about stuff"
@@ -91,19 +91,19 @@ var App = function() {
                 ]
             },
             partials: {
-                timeline: '{{#items}}<li {{.title}}><div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/categories/{{.category}}.png" alt="">
+                timeline: "{{#items}}<li {{.title}}><div class=\"timeline-image\">
+                                <img class=\"img-circle img-responsive\" src=\"img/categories/{{.category}}.png\" alt=\"\">
                             </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
+                            <div class=\"timeline-panel\">
+                                <div class=\"timeline-heading\">
                                     <h4>{{.title}}</h4>
-                                    <h4 class="subheading">{{.subheading}}</h4>
+                                    <h4 class=\"subheading\">{{.subheading}}</h4>
                                 </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">{{.content}}</p>
+                                <div class=\"timeline-body\">
+                                    <p class=\"text-muted\">{{.content}}</p>
                                 </div>
                             </div>
-                        </li>'
+                        </li>"
             }
         });
     });
