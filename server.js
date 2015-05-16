@@ -43,7 +43,7 @@ var App = function() {
     // mustache setup
     self.app.engine('mustache', mustacheExpress())
     self.app.set('view engine', 'mustache');
-    self.app.set('views', __dirname + '/public/render');
+    self.app.set('views', __dirname + './public/render');
 
     self.app.use(express.static(__dirname + '/public'));
 
@@ -54,7 +54,7 @@ var App = function() {
     //curl -i https://api.github.com/repos/digithree/constitution-of-ireland-render/commits
 
     self.app.get('/renderer', function(req, res) {
-    res.render('beard.html', {
+    res.render('beard', {
             message: "Hello World!",
             items: [
                 {
