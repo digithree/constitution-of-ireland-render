@@ -4,7 +4,7 @@ var express = require('express');
 var fs      = require('fs');
 var mongodb = require('mongodb');
 var path = require ('path');
-var mustacheExpress = require('mustache-express');
+var exphbs  = require('express-handlebars');
 
 
 var App = function() {
@@ -42,10 +42,8 @@ var App = function() {
     };
 
     // mustache setup
-    self.app.engine('html', mustacheExpress())
-    self.app.set('view engine', 'html');
-    self.app.set('views', __dirname + '/public/render');
-    //self.app.set('views',express.static(path.join(__dirname + '.../public/render')));
+    self.app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+    self.app.set('view engine', 'handlebars');
 
     self.app.use(express.static(__dirname + '/public'));
     //self.app.use(express.static(path.join(__dirname + '.../public')));
