@@ -61,14 +61,14 @@ var App = function() {
                 {
                     title: "Part One",
                     direction: "",
-                    category: "court.png",
+                    category: "court",
                     subheading: "The year",
                     content: "A few words about stuff"
                 },
                 {
                     title: "Part Two",
                     direction: "class=\"timeline-inverted\"",
-                    category: "nation.png",
+                    category: "nation",
                     subheading: "The other year",
                     content: "Some more stuff about stuff"
                 }
