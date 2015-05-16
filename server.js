@@ -65,8 +65,8 @@ var App = function() {
                 headers: {
                     'User-Agent' : 'digithree'
                 }
-            }, function(res){
-                res.on('data',function(data) {
+            }, function(rezzz){
+                rezzz.on('data',function(data) {
                     console.log(data+'');
                     res.render('beard', data);
                 });
