@@ -182,9 +182,9 @@ var App = function() {
 ]
                 });
                 //JSON.stringify(items)
+                */
             }
         });
-        */
 
         /*
         request(url, function(err, resp, body) {
