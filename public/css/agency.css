@@ -14,7 +14,7 @@ body {
 }
 
 .text-primary {
-    color: #ff6600;
+    color: #3a6dff;
 }
 
 p {
@@ -35,14 +35,14 @@ a.active {
 }
 
 a {
-    color: #ff6600;
+    color: #3a6dff;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #ff4400;
+    color: #0042ff;
 }
 
 h1,
@@ -71,12 +71,12 @@ h6 {
 }
 
 .btn-primary {
-    border-color: #ff6600;
+    border-color: #3a6dff;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #ff6600;
+    background-color: #3a6dff;
 }
 
 .btn-primary:hover,
@@ -84,9 +84,9 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #ff4400;
+    border-color: #0042ff;
     color: #fff;
-    background-color: #ff4400;
+    background-color: #0042ff;
 }
 
 .btn-primary:active,
@@ -110,25 +110,25 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #ff6600;
-    background-color: #ff6600;
+    border-color: #0042ff;
+    background-color: #0042ff;
 }
 
 .btn-primary .badge {
-    color: #ff6600;
+    color: #0042ff;
     background-color: #fff;
 }
 
 .btn-xl {
     padding: 20px 40px;
-    border-color: #ff6600;
+    border-color: #0042ff;
     border-radius: 3px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #ff6600;
+    background-color: #0042ff;
 }
 
 .btn-xl:hover,
@@ -136,9 +136,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #ff4400;
+    border-color: #0042ff;
     color: #fff;
-    background-color: #ff4400;
+    background-color: #0042ff;
 }
 
 .btn-xl:active,
@@ -162,12 +162,12 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    border-color: #ff6600;
-    background-color: #ff6600;
+    border-color: #0042ff;
+    background-color: #0042ff;
 }
 
 .btn-xl .badge {
-    color: #ff6600;
+    color: #0042ff;
     background-color: #fff;
 }
 
@@ -180,14 +180,14 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #ff6600;
+    color: #0042ff;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #ff4400;
+    color: #0042ff;
 }
 
 .navbar-default .navbar-collapse {
@@ -195,8 +195,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #ff6600;
-    background-color: #ff6600;
+    border-color: #0042ff;
+    background-color: #0042ff;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -219,20 +219,20 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #ff6600;
+    color: #0042ff;
 }
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #ff6600
+    background-color: #0042ff
     ;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #ff4400;
+    background-color: #0042ff;
 }
 
 @media(min-width:768px) {
