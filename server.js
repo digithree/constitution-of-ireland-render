@@ -212,7 +212,7 @@ var App = function() {
             require( 'https' )
                 .get({
                     hostname: 'api.github.com',
-                    path: '/repos/digithree/JImaginaryMachine/commits',
+                    path: '/repos/digithree/fake/commits',
                     headers: {
                         'User-Agent' : 'digithree'
                     }
