@@ -216,6 +216,8 @@ var App = function() {
                 return;
             }
 
+            var fulldata = '';
+
             require( 'https' )
                 .get({
                     hostname: 'api.github.com',
@@ -226,7 +228,11 @@ var App = function() {
                 }, function(rezzz) {
                     rezzz.on('data', function(data) {
                         //console.log(data+'');
-                        repo.insert(JSON.parse(data), {safe : false}, function(err, inserted_doc) {
+                        fulldata += data;
+                    });
+                    rezzz.on('end', function(data) {
+                        fulldata += data;
+                        repo.insert(JSON.parse(fulldata), {safe : false}, function(err, inserted_doc) {
                             if( err && err.name == "MongoError" && err.code == 11000 ) {
                                 console.log("This entry already exists.");
                                 res.end("This entry already exists.");
@@ -238,7 +244,7 @@ var App = function() {
                             }
                             res.end("Created db from JSON array!");
                         });
-                    });
+                    })
                 });
         });
     });
