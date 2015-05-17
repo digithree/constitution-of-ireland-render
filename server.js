@@ -87,6 +87,8 @@ var App = function() {
                 if (intCount > 0) {
                     var strJson = '{ "items": [';
                     for (var i = 0; i < intCount;) {
+                        var cat = allCats[i%4];
+                        console.log('cat '+i+': '+cat);
                         strJson += '{"message":"'
                             + items[i].commit.message
                             + '",';
@@ -97,7 +99,7 @@ var App = function() {
                             + (i%2==1?'class=timeline-inverted':'')
                             + '",';
                         strJson += '"category":"'
-                            + allCats[i%4]
+                            + cat
                             + '",';
                         strJson += '"datetime":"'
                             + moment(items[i].commit.committer.date)
