@@ -7,6 +7,7 @@ var path = require ('path');
 var exphbs  = require('express-handlebars');
 var request = require('request');
 var moment = require('moment');
+var bodyParser = require('body-parser');
 
 
 var App = function() {
@@ -42,6 +43,10 @@ var App = function() {
         res.sendfile('./public/render/index-middle.html', {root: __dirname });
         res.sendfile('./public/render/index-pt-2.html', {root: __dirname });
     };
+
+    // limits setup
+    self.app.use(bodyParser.json({limit: '50mb'}));
+    self.app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
     // mustache setup
     self.app.engine('handlebars', exphbs({defaultLayout: 'main'}));
