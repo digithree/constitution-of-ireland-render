@@ -97,7 +97,7 @@ var App = function() {
                             + (i%2==1?'class=timeline-inverted':'')
                             + '",';
                         strJson += '"category":"'
-                            + allCats[i%4]
+                            + 'europe'
                             + '",';
                         strJson += '"datetime":"'
                             + moment(items[i].commit.committer.date)
