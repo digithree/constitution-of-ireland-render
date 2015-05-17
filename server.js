@@ -99,7 +99,7 @@ var App = function() {
                             + (i%2==1?'class=timeline-inverted':'')
                             + '",';
                         strJson += '"category":"'
-                            + cat
+                            + 'nation'
                             + '",';
                         strJson += '"datetime":"'
                             + moment(items[i].commit.committer.date)
@@ -214,7 +214,7 @@ var App = function() {
             require( 'https' )
                 .get({
                     hostname: 'api.github.com',
-                    path: '/repos/digithree/JImaginaryMachine/commits',
+                    path: '/repos/digithree/constitution-of-ireland-render/commits',
                     headers: {
                         'User-Agent' : 'digithree'
                     }
