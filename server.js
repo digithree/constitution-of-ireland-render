@@ -77,10 +77,10 @@ var App = function() {
                 */
 
                 var allCats = [
-                    'church-state',
-                    'court',
-                    'europe',
-                    'nation'
+                    "church-state",
+                    "court",
+                    "europe",
+                    "nation"
                 ];
 
                 var intCount = items.length;
@@ -97,7 +97,7 @@ var App = function() {
                             + (i%2==1?'class=timeline-inverted':'')
                             + '",';
                         strJson += '"category":"'
-                            + 'europe'
+                            + allCats[i%4]
                             + '",';
                         strJson += '"datetime":"'
                             + moment(items[i].commit.committer.date)
