@@ -214,7 +214,7 @@ var App = function() {
             require( 'https' )
                 .get({
                     hostname: 'api.github.com',
-                    path: '/repos/digithree/fake/commits',
+                    path: '/repos/digithree/constitution-of-ireland-render/commits',
                     headers: {
                         'User-Agent' : 'digithree'
                     }
